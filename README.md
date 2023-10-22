@@ -152,7 +152,7 @@ docker-compose -f docker-compose.yml up -d
 ```
 This command builds and brings up the containers.
 
-#### Test
+## Test
 
 Verify that the containers are up and running by executing:
 ```shell
