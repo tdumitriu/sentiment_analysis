@@ -68,6 +68,7 @@ def process():
 
         try:
             doc = nlp(data.get('text'))
+            # get all the sentence sentiments
             sentence_sentiment_list = get_sentence_sentiments(doc)
 
             return jsonify(sentence_sentiment_list)
@@ -82,7 +83,10 @@ def process():
             doc = nlp(data)
             sentence_sentiment_list = get_sentence_sentiments(doc)
 
-            return jsonify(sentence_sentiment_list)
+            # retrieve the combination of sentiments
+            aggregate_sentiments = app1_work.get_sentiment_aggregation(sentence_sentiment_list)
+
+            return jsonify(aggregate_sentiments)
         except requests.exceptions.RequestException as err:
             return err
     else:
