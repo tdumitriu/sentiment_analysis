@@ -1,0 +1,8 @@
+version: '3'
+services:
+  server1:
+    build: ..
+    container_name: server1
+    image: docker-server1:latest
+    ports:
+      - "5018:5018/tcp"

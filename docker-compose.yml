@@ -1,0 +1,14 @@
+version: '3'
+services:
+  server1:
+    build: app1
+    container_name: server1
+    image: docker-server1:latest
+    ports:
+      - '5018:5018'
+  server2:
+    build: app2
+    container_name: server2
+    image: docker-server2:latest
+    ports:
+      - '5019:5019'
